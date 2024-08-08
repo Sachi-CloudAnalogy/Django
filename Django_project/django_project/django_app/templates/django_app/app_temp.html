@@ -1,11 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>app page</title>
-</head>
-<body>
-    <h1>Django app template page !!</h1>
-</body>
-</html>
+{% extends "layout.html" %}
+
+{% block title %}
+App Page
+{% endblock %}
+
+{% block content %}
+<h1>Django app Page !!</h1>
+<hr>
+<h1>---Employee's details of the Company---</h1>
+
+<div class="grid-container">
+    {% for u in user %}
+    <div class="user-card">
+        {#<!--for image -- <img src="{{user.image.url}}" alt=""> -->#}
+        <h3 class="user-name">Employee name : {{u.name}}</h3>
+        <h3>DOJ : {{u.date_added}}</h3>
+        <h3>Day : {{u.day}}</h3>
+        <a href="{% url 'details' u.id %}">
+            <button>City</button>
+        </a>
+    </div>
+   
+    {% endfor %}
+</div>
+
+{% endblock %}

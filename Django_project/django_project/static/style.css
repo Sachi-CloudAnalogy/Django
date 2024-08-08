@@ -7,3 +7,30 @@ h1{
     text-align: center;
     font-size: 2em;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+    gap: 16px; /* Space between grid items */
+    margin: 16px; /* Margin around the grid */
+}
+
+
+.user-card {
+    background-color: #3b82f6; 
+    padding: 20px; /* Padding inside each card */
+    border-radius: 8px; /* Optional: Rounded corners */
+    color: white; /* Text color */
+}
+
+.user-name {
+    font-size: 24px; 
+    font-weight: bold; 
+}
+
+.button{
+    background-color: black;
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+}
