@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Forms
+{% endblock %}
+
+{% block content %}
+<h1>--Forms--</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit">Search</button>
+</form>
+
+{% if employee %}
+    <h2>Employee details</h2>
+    <ul>
+        {% for emp in employee %}
+            <li>{{emp.emp_name.name}} ({{emp.emp_name.city}}) -- {{emp.post}}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% endblock %}
