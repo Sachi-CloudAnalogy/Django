@@ -14,7 +14,7 @@ def get_list():
     return data
 
 def create_update():
-    new_data = {'user': 2, 'content': "New Update !!"}
+    new_data = {'user': 1, 'content': "New Update !!"}
     r = requests.post(BASE_URL + ENDPOINT, data=new_data)
     print(r.status_code)
     if r.status_code == requests.codes.ok:
